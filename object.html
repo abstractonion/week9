@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects in Javascript</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    const person1 = {}
+    const person2 = Object()
+
+    person1.name = 'caleb'
+    person1.age = 28
+    person1['home address'] = 'yaba'
+    delete person1['home address']
+
+    person1.homeAddress = 'yaba'
+    person1['likes'] = ['art', 'football', 'music']
+    person1.likes[3] = 'designing'
+    person1.likes[1] = 'juice'
+
+    //using a keyword 9reserved words inJS as a key
+    person1.let = 'let us know what you are doing'
+    person1[100] = 'hundred'
+
+    //function within an object
+    person1.readme = function(){
+        return `hello i am ${this.name}, i love ${this.likes[Math.floor(Math.random()*this.likes.length)]}`
+    }
+
+    //construction function
+    function Teacher(name, course, time){
+        this.name = name;
+        this.course = course;
+        this.time = time;
+        this.intro = function(){
+            return `Hi, I am ${this.name}`
+        }
+    }
+
+    const teacher1 = new Teacher('franc', 'frotend', 'weekdays')
+    const teacher2 = new Teacher('caleb', 'product design', 'weekends')
+
+</script>
+</html>
